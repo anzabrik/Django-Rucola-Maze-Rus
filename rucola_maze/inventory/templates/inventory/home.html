@@ -1,0 +1,26 @@
+{% extends 'inventory/layout.html' %}
+{% block title %}
+Выручка и прибыль
+{% endblock %}
+
+{% block body %}
+
+<div class="h1">
+    <h1>Сколько мы заработали?</h1>
+</div>
+<table class="table table-bordered w-auto">
+    <tr>
+        <td>Общая выручка (сумма всех зарегистрированных покупок)</td>
+        <td>{{ revenue }} руб.</td>
+    </tr>
+    <tr>
+        <td>Общая сумма покупок (сумма всех использованных ингредиентов)</td>
+        <td>{{ cost_of_ingredients|floatformat:2 }} руб.</td>
+    </tr>
+    <tr>
+        <td>Прибыль (выручка минус сумма покупок)</td>
+        <td>{{ profit|floatformat:2 }} руб.</td>
+    </tr>
+</table>
+
+{% endblock %}

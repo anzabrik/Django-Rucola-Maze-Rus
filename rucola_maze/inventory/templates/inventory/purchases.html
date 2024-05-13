@@ -1,0 +1,33 @@
+{% extends 'inventory/layout.html' %}
+{% block title %}
+Покупки
+{% endblock %}
+
+{% block body %}
+<div class="h1">
+    <h1>Покупки</h1>
+</div>
+<div><a class="btn btn-primary btn-lg right" href="{% url 'purchase_new' %}" role="button">Добавить покупку</a>
+</div>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Блюдо</th>
+            <th>Время</th>
+            <th>Редактировать</th>
+            <th>Удалить</th>
+        </tr>
+    </thead>
+    {% for purchase in object_list %}
+    <tr>
+        <td>{{ purchase.menu_item }}</td>
+        <td>{{ purchase.time }}</td>
+        <td><a href="{% url 'purchase_edit' purchase.id %}"><button class="btn btn-primary">Редактировать</button></a>
+        </td>
+        <td><a href="{% url 'purchase_delete' purchase.id %}">❌</td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

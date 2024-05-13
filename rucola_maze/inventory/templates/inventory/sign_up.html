@@ -1,0 +1,32 @@
+{% extends 'inventory/layout.html' %}
+{% block title %}
+Регистрация
+{% endblock %}
+{% block body %}
+
+<div class="h1">
+    <h1>Регистрация</h1>
+</div>
+{% if message %}
+<div class="wrong">
+    {{ message }}
+</div>
+{% endif %}
+<form action="{% url 'sign_up' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" placeholder="Имя пользователя" class="form-control" name="username">
+    </div>
+    <div class="form-group">
+        <input type="email" placeholder="Имейл" class="form-control" name="email">
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="Пароль" class="form-control" name="password">
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="Подтвердите пароль" class="form-control" name="confirmation">
+    </div>
+    <input type="submit" value="Зарегистрироваться" class="btn btn-primary btn-lg" class="form-control">
+</form>
+
+{% endblock %}

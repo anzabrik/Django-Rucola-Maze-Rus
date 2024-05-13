@@ -1,0 +1,41 @@
+{% extends 'inventory/layout.html' %}
+{% block title %}
+Требования рецептов
+{% endblock %}
+
+{% block body %}
+
+<div class="h1">
+    <h1>Требования рецептов</h1>
+</div>
+<div><a class="btn btn-primary btn-lg right" href="{% url 'recipe_requirement_new' %}" role="button">Добавить
+        требование рецепта</a>
+</div>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Блюдо</th>
+            <th>Ингредиент</th>
+            <th>Требуемое количество</th>
+            <th>Единица измерения</th>
+            <th>Редактировать</th>
+            <th>Удалить</th>
+        </tr>
+    </thead>
+    {% for recipe_requirement in object_list %}
+    <tr>
+        <td>{{ recipe_requirement.menu_item }}</td>
+        <td>{{ recipe_requirement.ingredient }}</td>
+        <td>{{ recipe_requirement.quantity_required }}</td>
+        <td>{{ recipe_requirement.ingredient.unit }}</td>
+        <td><a href="{% url 'recipe_requirement_edit' recipe_requirement.id %}"><button
+                    class="btn btn-primary">Редактировать</button></a>
+        </td>
+        <td><a href="{% url 'recipe_requirement_delete' recipe_requirement.id %}">❌</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

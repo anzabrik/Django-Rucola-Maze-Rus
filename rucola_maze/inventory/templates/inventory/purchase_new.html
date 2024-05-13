@@ -1,0 +1,24 @@
+{% extends 'inventory/layout.html' %}
+{% block title %}
+Новая покупка
+{% endblock %}
+
+{% block body %}
+<div class="h1">
+    <h1>Новая покупка</h1>
+</div>
+{% if available_menu_items %}
+<form method="POST">
+    {% csrf_token %}
+    <label for="menu_item_id">Блюдо: </label>
+    <select name="menu_item" id="menu_item_id">
+        {% for menu_item in available_menu_items %}
+        <option value={{ menu_item.id }}>{{ menu_item.title }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Сохранить" class="btn btn-primary">
+</form>
+{% else %}
+<p>Похоже, наше меню сейчас недоступно! Обратитесь к администратору!</p>
+{% endif %}
+{% endblock %}

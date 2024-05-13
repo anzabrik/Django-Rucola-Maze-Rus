@@ -1,0 +1,17 @@
+{% extends 'inventory/layout.html' %}
+{% block title %}
+Редактировать блюдо
+{% endblock %}
+
+{% block body %}
+
+<div class="h1">
+    <h1>Редактировать блюдо</h1>
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Сохранить" class="btn btn-primary">
+</form>
+{% endblock %}

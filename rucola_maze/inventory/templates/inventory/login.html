@@ -1,0 +1,27 @@
+{% extends 'inventory/layout.html' %}
+{% block title %}
+Вход в систему
+{% endblock %}
+{% block body %}
+
+<div class="h1">
+    <h1>Вход в систему</h1>
+</div>
+{% if message %}
+<div class="wrong" role="alert">
+    {{ message }}
+</div>
+{% endif %}
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" placeholder="Имя пользователя" class="form-control" name="username">
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="Пароль" class="form-control" name="password">
+    </div>
+    <input type="submit" value="Войти" class="btn btn-primary btn-lg" class="form-control">
+</form>
+
+<p>Новый пользователь? <a href="{% url 'sign_up' %}">Зарегистрироваться</a></p>
+{% endblock %}
