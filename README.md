@@ -2,8 +2,8 @@
 
 ## Video Demo
 
-[Video Demo](). - на русском
-[Video Demo](). - на английском
+[Video Demo](https://youtu.be/uRBWgg9tVU8) -- на русском
+[Video Demo](https://youtu.be/MKNazHb1nDc) -- на английском
 
 ## Назначение
 
