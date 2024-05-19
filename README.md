@@ -1,7 +1,5 @@
 # Rucola Maze: веб-приложение на Джанго, которое ведет учет продуктов и покупок в ресторане
 
-## Video Demo
-
 [Video Demo](https://youtu.be/uRBWgg9tVU8) -- на русском
 [Video Demo](https://youtu.be/MKNazHb1nDc) -- на английском
 
